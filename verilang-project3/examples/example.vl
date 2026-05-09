@@ -1,0 +1,46 @@
+defmodule MyModule
+
+  // --- Spaces ---
+  defspace Naturals end
+  defspace Integers < Naturals end
+
+  // --- Operators ---
+  defoperator plus : Naturals -> Naturals -> Naturals end
+  defoperator neg  : Naturals -> Integers end
+
+  // --- Variables with type annotations (Project 3) ---
+  defvar
+    x : Int,
+    y : Int,
+    flag : Bool,
+    ch   : Char,
+    msg  : String
+  end
+
+  // --- Data structures with typed fields (Project 3) ---
+  defdata Point : Point
+    px : Int
+    py : Int
+  end
+
+  defdata Person : Person
+    age  : Int
+    name : String
+  end
+
+  // --- Expressions ---
+  defexpression x = 42:Int end
+
+  defexpression flag = true:Bool end
+
+  defexpression ch = 'a':Char end
+
+  defexpression msg = "hello":String end
+
+  // --- Rules ---
+  defrule (plus x y) -> (plus y x) end
+
+  // --- Equations ---
+  defequation (plus x y) = (plus y x) end
+
+end
